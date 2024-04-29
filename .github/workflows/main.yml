@@ -15,11 +15,11 @@ jobs:
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.SSH_HOST }}
+          host: 143.244.180.233
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd ${{ secrets.PATH }}
-            git pull
-            docker compose stop
-            docker compose build
-            docker compose up -d
+          # script: |
+          #   cd ${{ secrets.PATH }}
+          #   git pull
+          #   docker compose stop
+          #   docker compose build
+          #   docker compose up -d
