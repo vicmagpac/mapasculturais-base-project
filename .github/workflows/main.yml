@@ -18,10 +18,10 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          # script: |
-          #   cd ${{ secrets.PATH }}
-          #   git pull
-          #   docker compose stop
-          #   docker compose build
-          #   docker compose up -d
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            cd ${{ secrets.PATH }}
+            git pull
+            docker compose stop
+            docker compose build
+            docker compose up -d
