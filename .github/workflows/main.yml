@@ -1,7 +1,8 @@
 name: "Deploy to DigitalOcean"
 on: 
   push:
-    - master
+    branches:
+      - master
 
 jobs:
   build_deploy:
