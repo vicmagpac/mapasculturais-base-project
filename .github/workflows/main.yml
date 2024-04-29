@@ -1,7 +1,7 @@
 name: "Deploy to DigitalOcean"
 on: 
   push:
-    - main
+    - master
 
 jobs:
   build_deploy:
@@ -10,3 +10,15 @@ jobs:
     steps:
       - name: "Checkout code"
         uses: actions/checkout@v4
+
+      # - name: executing remote ssh commands using password
+      #   uses: appleboy/ssh-action@v1.0.3
+      #   with:
+      #     host: ${{ secrets.SSH_HOST }}
+      #     key: ${{ secrets.SSH_PRIVATE_KEY }}
+      #     script: |
+      #       cd ${{ secrets.PATH }}
+      #       git pull
+      #       docker compose stop
+      #       docker compose build
+      #       docker compose up -d
